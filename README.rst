@@ -1,8 +1,7 @@
-docker build -t demo-app .
 
-docker run --env PORT=8080 demo-app 
+# Deploy:
 
+docker-compose up --build
 
-
-
-uvicorn main:app  --port 8080 --workers 1 --timeout-keep-alive 0 --reload
+docker tag cloud-run-demo_app europe-west1-docker.pkg.dev/quick-tag-2/quick-tag-2-repo/cloud-run-demo_app
+docker push europe-west1-docker.pkg.dev/quick-tag-2/quick-tag-2-repo/cloud-run-demo_app
